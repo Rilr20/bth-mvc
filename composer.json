@@ -1,0 +1,18 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Mos\\": "src/",
+            "Rilr\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "phpstan/phpstan": "^0.12"
+    },
+    "require": {
+        "twig/twig": "^3.3"
+    }
+}
