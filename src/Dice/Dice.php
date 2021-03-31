@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Rilr\Dice;
+
 /**
  * Class Dice.
  */
@@ -14,9 +15,9 @@ class Dice
     {
         $this->sides = $sides;
     }
-    public function throw(): int{
+    public function throw(): int
+    {
         $this->latestThrow = rand(1, $this->sides);
-
         return $this->latestThrow;
     }
     public function getLastRoll(): int
@@ -24,12 +25,3 @@ class Dice
         return $this->latestThrow;
     }
 }
-
-class graphicalDice {
-    public function renderDice($diceResult) {
-        
-    }
-}
-
-
-?>

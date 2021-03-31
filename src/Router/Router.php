@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Mos\Router;
 
+use Rilr\Dice\{
+    Game
+};
+
 use function Mos\Functions\{
     destroySession,
     redirectTo,
@@ -12,7 +16,7 @@ use function Mos\Functions\{
     sendResponse,
     url
 };
-use Rilr\Dice\Game;
+
 /**
  * Class Router.
  */
@@ -119,7 +123,6 @@ class Router
                         $callable->computerRoll($computer, $_POST["computer"], $_POST["player"]);
                         break;
                     case "reset":
-                        
                         if (!isset($_SESSION["game"])) {
                             $callable = new Game();
                             $_SESSION["game"] = serialize($callable);
@@ -141,7 +144,6 @@ class Router
                         }
                         $callable->initGame();
                         break;
-                    
                 }
             }
             // $callable ->playGame();

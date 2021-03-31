@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Rilr\Dice;
 
+use DateTime;
+use Rilr\Dice\{
+    Dice,
+    DiceHand
+};
+
 use function Mos\Functions\{
     destroySession,
     redirectTo,
@@ -13,19 +19,14 @@ use function Mos\Functions\{
     url
 };
 
-use DateTime;
 /**
  * Class Game
  */
-
-use Rilr\Dice\Dice;
-use Rilr\Dice\DiceHand;
-
 class Game
-{   
+{
     public $player;
     public $computer;
-    public function playGame($numOfDie=1): void 
+    public function playGame($numOfDie = 1): void
     {
         $_SESSION["running"] = "true";
         $data = [
@@ -37,7 +38,7 @@ class Game
         // $playerHand = new DiceHand(2, 6);
         // var_dump($numOfDie);
         $this->player = new DiceHand($numOfDie, 6);
-        $this->computer = new DiceHand($numOfDie,6);
+        $this->computer = new DiceHand($numOfDie, 6);
         // $computerHand = new DiceHand(2, 6);
         // $die = new Dice(6);
         // $die->throw();
@@ -59,7 +60,8 @@ class Game
         sendResponse($body);
     }
 
-    private function dieSum($diceArray): int {
+    private function dieSum($diceArray): int
+    {
         //ska ha föregående kast resultat
         $dieSum = 0;
         foreach ($diceArray as $die) {
@@ -68,7 +70,8 @@ class Game
         return $dieSum;
     }
 
-    public function firstRound($playerHand, $computerHand): array {
+    public function firstRound($playerHand, $computerHand): array
+    {
         $data = [
             "title" => "Game 21",
         ];
@@ -86,7 +89,8 @@ class Game
         return $data;
     }
 
-    public function initGame(): void {
+    public function initGame(): void
+    {
         $_SESSION["running"] = "false";
 
         $data = [
@@ -99,7 +103,8 @@ class Game
         sendResponse($body);
     }
 
-    public function playerRoll($playerHand, $currentSum, $opponentSum): void {
+    public function playerRoll($playerHand, $currentSum, $opponentSum): void
+    {
         $newSum = 0;
         $playerHand->throw();
         $sumArray = $playerHand->getLastRoll();
@@ -118,7 +123,8 @@ class Game
         sendResponse($body);
     }
 
-    public function checkWinCondition($playerSum, $computerSum): void {
+    public function checkWinCondition($playerSum, $computerSum): void
+    {
         $string = "";
         $pWin = "Player Wins!";
         $pLoss = "Player Loses!";
@@ -136,7 +142,7 @@ class Game
             $string = $pWin;//"datorn har över 21 vinst"; // funkar $pWin
         } else if ($computerSum > $playerSum && $computerSum < 21) {
             $string = $pLoss; //"datorn har högre än spelaren och mindre än 21 förlust"; // funkar $pLoss
-        } else if ($playerSum > $computerSum && $playerSum < 21 ) {
+        } else if ($playerSum > $computerSum && $playerSum < 21) {
             $string = $pWin;//"spelaren har högre än datorn men mindre än 21 Vinst"; // funkar $pWin
         } else if ($playerSum == $computerSum) {
             $string = $pLoss;
@@ -160,7 +166,8 @@ class Game
         sendResponse($body);
     }
 
-    public function computerRoll($computerHand, $computerSum, $playerSum) {
+    public function computerRoll($computerHand, $computerSum, $playerSum)
+    {
         $newSum = $computerSum;
         if ($playerSum <= 21) {
             while ($newSum <= 16) {
@@ -174,25 +181,4 @@ class Game
         }
         $this->checkWinCondition($playerSum, $newSum);
     }
-
 }
-// // var_dump(($_POST));
-// if (isset($_POST['button1'])) {
-//     //en tärning spelas det med
-//     $_SESSION["running"] = false;
-
-//     $data = [
-//         "header" => "Game 21",
-//         "messag" => "Hejsan nu kör vi!"
-//     ];
-
-//     $body = renderView("layout/dice.php", $data);
-//     sendResponse($body);
-//     // echo "This is Button1 that is selected";
-//     // $callable->playGame();
-// }
-// if (isset($_POST['button2'])) {
-//     // två tärningar spelas det med
-//     echo "This is Button2 that is selected";
-//     // $newGame = new Game(2);
-// }

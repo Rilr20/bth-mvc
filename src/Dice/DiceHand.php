@@ -15,29 +15,30 @@ class DiceHand
 
     public function __construct($numOfDice, $sides)
     {
-        
-        for ($i=0; $i < $numOfDice; $i++) {
+        for ($i = 0; $i < $numOfDice; $i++) {
             $this->dices[$i] = new Dice($sides);
         }
     }
 
-    public function throw(): void {
+    public function throw(): void
+    {
         $len = sizeOf($this->dices);
         for ($i = 0; $i < $len; $i++) {
             $this->dices[$i]->throw();
         }
     }
 
-    public function getLastRoll(): array {
-        $returnString = "";
+    public function getLastRoll(): array
+    {
+        // $returnString = "";
         $len = sizeOf($this->dices);
         $returnArray = [];
         for ($i = 0; $i < $len; $i++) {
             $dieRoll = $this->dices[$i]->getLastRoll();
-            // $returnString = (string)$returnString . " " . (string)$dieRoll; 
+            // $returnString = (string)$returnString . " " . (string)$dieRoll;
             $returnArray[$i] = $dieRoll;
         }
-        $returnString = $returnArray;
+        // $returnString = $returnArray;
         return $returnArray;
     }
 }
