@@ -64,9 +64,9 @@ class Router
             if (!isset($_SESSION["game"])) {
                 $callable = new Game();
                 $_SESSION["game"] = serialize($callable);
-            } else {
-                $callable = unserialize($_SESSION["game"]);
             }
+            $callable = unserialize($_SESSION["game"]);
+            
 
             $callable->initGame();
             return;
@@ -109,9 +109,8 @@ class Router
                         if (!isset($_SESSION["game"])) {
                             $callable = new Game();
                             $_SESSION["game"] = serialize($callable);
-                        } else {
-                            $callable = unserialize($_SESSION["game"]);
                         }
+                        $callable = unserialize($_SESSION["game"]);
 
                         $callable->initGame();
                         // echo "reset game";
@@ -122,9 +121,8 @@ class Router
                         if (!isset($_SESSION["game"])) {
                             $callable = new Game();
                             $_SESSION["game"] = serialize($callable);
-                        } else {
-                            $callable = unserialize($_SESSION["game"]);
-                        }
+                        } 
+                        $callable = unserialize($_SESSION["game"]);
                         $callable->initGame();
                         break;
                 }
