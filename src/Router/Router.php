@@ -61,14 +61,6 @@ class Router
             sendResponse($body);
             return;
         } else if ($method === "GET" && $path === "/dice") {
-            // $data = [
-            //     "header" => "Dice game",
-            //     "message" => "Hey, edit this to do it youreself!",
-            // ];
-            // $body = renderView("layout/dice.php", $data);
-            // sendResponse($body);
-            // $callable = new \Rilr\Dice\Game();
-            // $_SESSION["game"] = var_dump($callable);
             if (!isset($_SESSION["game"])) {
                 $callable = new Game();
                 $_SESSION["game"] = serialize($callable);
@@ -80,16 +72,6 @@ class Router
             return;
         } else if ($method === "POST" && $path === "/dice") {
             $callable = unserialize($_SESSION["game"]);
-            // echo "<pre>";
-            // echo "tjenare ";
-            // var_dump($_POST);
-            // echo "<br>";
-            // var_dump($_SESSION);
-            // echo "<br>";
-            // var_dump($_SESSION["game"]);
-            // echo "</pre>";
-            // // $callable = $_SESSION["game"];
-            // var_dump($callable);
             if (isset($_POST["options"])) {
                 switch ($_POST["options"]) {
                     case 1:
@@ -147,28 +129,6 @@ class Router
                         break;
                 }
             }
-            // $callable ->playGame();
-            // $callable = $_SESSION["callable"];
-            // $callable->playGame();
-            // if (isset($_POST['button1'])) {
-            //     //en tärning spelas det med
-            //     $_SESSION["running"] = false;
-
-            //     $data = [
-            //             "header" => "Dice",
-            //             "messag" => "Hejsan nu kör vi!"
-            //         ];
-
-            //     $body = renderView("layout/dice.php", $data);
-            //     sendResponse($body);
-            //     // echo "This is Button1 that is selected";
-            //     // $callable->playGame();
-            // }
-            // if (isset($_POST['button2'])) {
-            //     // två tärningar spelas det med
-            //     echo "This is Button2 that is selected";
-            //     // $newGame = new Game(2);
-            // }
             return;
         }
 

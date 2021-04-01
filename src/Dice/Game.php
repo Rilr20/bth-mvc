@@ -27,7 +27,7 @@ class Game
 {
     public $player;
     public $computer;
-    public $sides=6;
+    public $sides = 6;
     public function playGame($numOfDie = 1): void
     {
         $_SESSION["running"] = "true";
@@ -71,12 +71,13 @@ class Game
         }
         return $dieSum;
     }
-    private function renderDice($diceArray): array {
+    private function renderDice($diceArray): array
+    {
         $htmlArray = [];
         $render = new GraphicalDice(6);
-        foreach($diceArray as $dice) {
-           $dice = $render->renderDice($dice);
-           array_push($htmlArray, $dice);
+        foreach ($diceArray as $dice) {
+            $dice = $render->renderDice($dice);
+            array_push($htmlArray, $dice);
         }
         return $htmlArray;
     }
@@ -102,10 +103,9 @@ class Game
         $data["playerRoll"] = $res;
         $data["playerDice"] = $playerDice;
 
-        
         return $data;
     }
-    
+
     public function initGame(): void
     {
         $_SESSION["running"] = "false";
@@ -206,7 +206,6 @@ class Game
                 }
                 $renderDice = $this->renderDice($sumArray);
                 $htmlArray = array_merge($htmlArray, $renderDice);
-                
             }
         }
         $this->checkWinCondition($playerSum, $newSum, $htmlArray);

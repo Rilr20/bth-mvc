@@ -47,9 +47,9 @@ if ($_SESSION["running"] == "true") { ?>
         <?php $_SESSION["computerDice"] = serialize($computerDice); ?>
         <button class="game-button" type="submit" name="gameAction" value="stay" />Stay</button>
     </form>
-<?php
+    <?php
 } else if ($_SESSION["running"] == "intermission") { //When you've stayed
-?>
+    ?>
 
     <h2><?= $gameText ?></h2>
     <h3>Computer: <?= $computerSum ?></h3>
@@ -85,14 +85,14 @@ if ($_SESSION["running"] == "true") { ?>
 
     ?>
 
-<?php
+    <?php
 } else { //When program starts
-?>
+    ?>
     <p>Play with 1 or 2 dice?</p>
     <form action="" method="post">
         <button class="game-button" name="options" type="submit" value="1">1 die</button>
         <button class="game-button" name="options" type="submit" value="2">2 Dice</button>
     </form>
-<?php
+    <?php
 }
 ?>
