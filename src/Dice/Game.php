@@ -7,7 +7,8 @@ namespace Rilr\Dice;
 use DateTime;
 use Rilr\Dice\{
     Dice,
-    DiceHand
+    DiceHand,
+    GraphicalDice
 };
 
 use function Mos\Functions\{
@@ -26,6 +27,7 @@ class Game
 {
     public $player;
     public $computer;
+    public $sides=6;
     public function playGame($numOfDie = 1): void
     {
         $_SESSION["running"] = "true";
@@ -37,8 +39,8 @@ class Game
         // creates player and computer hands
         // $playerHand = new DiceHand(2, 6);
         // var_dump($numOfDie);
-        $this->player = new DiceHand($numOfDie, 6);
-        $this->computer = new DiceHand($numOfDie, 6);
+        $this->player = new DiceHand($numOfDie, $this->sides);
+        $this->computer = new DiceHand($numOfDie, $this->sides);
         // $computerHand = new DiceHand(2, 6);
         // $die = new Dice(6);
         // $die->throw();
@@ -69,9 +71,19 @@ class Game
         }
         return $dieSum;
     }
-
+    private function renderDice($diceArray): array {
+        $htmlArray = [];
+        $render = new GraphicalDice(6);
+        foreach($diceArray as $dice) {
+           $dice = $render->renderDice($dice);
+           array_push($htmlArray, $dice);
+        }
+        return $htmlArray;
+    }
     public function firstRound($playerHand, $computerHand): array
     {
+        $playerDice = [];
+        $computerDice = [];
         $data = [
             "title" => "Game 21",
         ];
@@ -79,16 +91,21 @@ class Game
         // roll dice
         $playerHand->throw();
         $computerHand->throw();
-
         // get rolls
         $res = $this->dieSum($computerHand->getLastRoll());
+        $computerDice = $this->renderDice($computerHand->getLastRoll());
         $data["computerSum"] = $res;
-        $res = $this->dieSum($playerHand->getLastRoll());
-        $data["playerRoll"] = $res;
+        $data["computerDice"] = $computerDice;
 
+        $res = $this->dieSum($playerHand->getLastRoll());
+        $playerDice = $this->renderDice($playerHand->getLastRoll());
+        $data["playerRoll"] = $res;
+        $data["playerDice"] = $playerDice;
+
+        
         return $data;
     }
-
+    
     public function initGame(): void
     {
         $_SESSION["running"] = "false";
@@ -103,8 +120,10 @@ class Game
         sendResponse($body);
     }
 
-    public function playerRoll($playerHand, $currentSum, $opponentSum): void
+    public function playerRoll($playerHand, $currentSum, $opponentSum, $computerDice): void
     {
+        //rendera tärningar
+        // var_dump($computerDice);
         $newSum = 0;
         $playerHand->throw();
         $sumArray = $playerHand->getLastRoll();
@@ -112,18 +131,22 @@ class Game
             $newSum = $newSum + $roll;
         }
         $newSum = $newSum + $currentSum;
+        $playerDice = $this->renderDice($playerHand->getLastRoll());
+        $computerDice = unserialize($computerDice);
         $data = [
             "title" => "Game 21",
             "header" => "Game 21",
             "messag" => "Hey!",
             "computerSum" => $opponentSum,
-            "playerRoll" => $newSum
+            "playerRoll" => $newSum,
+            "computerDice" => $computerDice,
+            "playerDice" => $playerDice
         ];
         $body = renderView("layout/dice.php", $data);
         sendResponse($body);
     }
 
-    public function checkWinCondition($playerSum, $computerSum): void
+    public function checkWinCondition($playerSum, $computerSum, $htmlArray): void
     {
         $string = "";
         $pWin = "Player Wins!";
@@ -145,7 +168,7 @@ class Game
         } else if ($playerSum > $computerSum && $playerSum < 21) {
             $string = $pWin;//"spelaren har högre än datorn men mindre än 21 Vinst"; // funkar $pWin
         } else if ($playerSum == $computerSum) {
-            $string = $pLoss;
+            $string = $pLoss; //spelaren och datorn har lika mycket, förlust
         }
         $data = [
             "title" => "Game 21",
@@ -153,7 +176,9 @@ class Game
             "messag" => "Hey!",
             "computerSum" => $computerSum,
             "playerRoll" => $playerSum,
-            "gameText" => $string
+            "gameText" => $string,
+            "playerDice" => [],
+            "computerDice" => $htmlArray
         ];
         // return $data;
         $currentDate = new DateTime();
@@ -168,7 +193,9 @@ class Game
 
     public function computerRoll($computerHand, $computerSum, $playerSum)
     {
+        //rendera tärningar
         $newSum = $computerSum;
+        $htmlArray = [];
         if ($playerSum <= 21) {
             while ($newSum <= 16) {
                 $computerHand->throw();
@@ -177,8 +204,11 @@ class Game
                 foreach ($sumArray as $roll) {
                     $newSum = $newSum + $roll;
                 }
+                $renderDice = $this->renderDice($sumArray);
+                $htmlArray = array_merge($htmlArray, $renderDice);
+                
             }
         }
-        $this->checkWinCondition($playerSum, $newSum);
+        $this->checkWinCondition($playerSum, $newSum, $htmlArray);
     }
 }

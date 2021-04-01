@@ -105,13 +105,13 @@ class Router
             } else if (isset($_POST["gameAction"])) {
                 switch ($_POST["gameAction"]) {
                     case "roll":
-                        // echo "roll";
                         // player $_POST["player"];
                         $player = unserialize($_SESSION["player"]);
                         // var_dump($_SESSION);
                         // throws die or dice again
                         // $callable->playGame(1);
-                        $callable->playerRoll($player, $_POST["player"], $_POST["computer"]);
+                        // var_dump($_POST["diceArray"]);
+                        $callable->playerRoll($player, $_POST["player"], $_POST["computer"], $_SESSION["computerDice"]);
                         break;
 
                     case "stay":
@@ -123,6 +123,7 @@ class Router
                         $callable->computerRoll($computer, $_POST["computer"], $_POST["player"]);
                         break;
                     case "reset":
+                        unset($_SESSION["computerDice"]);
                         if (!isset($_SESSION["game"])) {
                             $callable = new Game();
                             $_SESSION["game"] = serialize($callable);
