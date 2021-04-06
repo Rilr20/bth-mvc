@@ -106,7 +106,7 @@ class Game
         return $data;
     }
 
-    public function initGame(): void
+    public function initGame(): array
     {
         $_SESSION["running"] = "false";
 
@@ -116,8 +116,9 @@ class Game
             "message" => "Hey!"
         ];
 
-        $body = renderView("layout/dice.php", $data);
-        sendResponse($body);
+        return $data;
+        // $body = renderView("layout/dice.php", $data);
+        // sendResponse($body);
     }
 
     public function playerRoll($playerHand, $currentSum, $opponentSum, $computerDice): void
