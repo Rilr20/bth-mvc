@@ -13,6 +13,9 @@
         "phpstan/phpstan": "^0.12"
     },
     "require": {
-        "twig/twig": "^3.3"
+        "twig/twig": "^3.3",
+        "nikic/fast-route": "^1.3",
+        "nyholm/psr7": "^1.4",
+        "laminas/laminas-httphandlerrunner": "^1.3"
     }
 }
