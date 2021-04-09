@@ -1,4 +1,5 @@
 body {
+    background-color: #faf9f9;
     overflow-y: scroll;
     width: 800px;
     margin: 8px auto;
@@ -85,4 +86,46 @@ footer {
     padding: 10px 20px 10px 20px;
     border: solid #25292b 1px;
     text-decoration: none;
+}
+
+.yatzy-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    min-width: 207px;
+    max-width: 207px;
+}
+
+.yatzy-table tr {
+    border: 1px solid black;
+}
+.yatzy-table tr:nth-child(8), 
+.yatzy-table tr:last-child  {
+    background-color: oldlace;
+}
+
+.yatzy-table tr:nth-child(9) {
+    background-color: rgb(255, 190, 167);
+}
+.yatzy-table th {
+    border: 1px solid black;
+}
+
+.yatzy-table td {
+    border: 1px solid black;
+}
+
+.yatzy-table td:not(:first-child) {
+    text-align: center;
+}
+
+.yatzy-table .border {
+    border-top: 2px solid black;
+}
+
+.yatzy-box {
+    display: flex;
+}
+
+.yatzy-box .dice-box {
+    flex-wrap: wrap;
 }

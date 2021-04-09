@@ -27,6 +27,8 @@ $router->addGroup("/session", function (RouteCollector $router) {
 $router->addGroup("/some", function (RouteCollector $router) {
     $router->addRoute("GET", "/where", ["\Mos\Controller\Sample", "where"]);
 });
+$router->addRoute("GET", "/yatzy", "\Rilr\Controller\Yatzycontroller");
+$router->addRoute("POST", "/yatzy", ["\Rilr\Controller\Yatzycontroller", "GameActions"]);
 
 $router->addRoute("GET", "/dice", ["\Rilr\Controller\Gamecontroller", "index"]);
-$router->addRoute("POST", "/dice", ["\Rilr\Controller\Gamecontroller", "aaaa"]);
+$router->addRoute("POST", "/dice", ["\Rilr\Controller\Gamecontroller", "gamelogic"]);

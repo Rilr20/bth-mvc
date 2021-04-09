@@ -24,7 +24,7 @@ class Dice
     }
     /**
      * Gets a random number depending on dice sides
-     * @return int the amoun the dice random was 
+     * @return int the amoun the dice random was
      */
     public function throw(): int
     {

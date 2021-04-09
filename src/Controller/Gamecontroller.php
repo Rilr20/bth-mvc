@@ -9,6 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 use Rilr\Dice\Game;
 
 use function Mos\Functions\renderView;
+
 /**
  * Controller for the index route.
  */
@@ -29,7 +30,8 @@ class Gamecontroller
     //         ->createResponse(200)
     //         ->withBody($psr17Factory->createStream($body));
     // }
-    public function index(): ResponseInterface {
+    public function index(): ResponseInterface
+    {
         $psr17Factory = new Psr17Factory();
         // var_dump($_SESSION);
         if (!isset($_SESSION["game"])) {
@@ -52,13 +54,9 @@ class Gamecontroller
             ->createResponse(200)
             ->withBody($psr17Factory->createStream($body));
     }
-    public function start(): ResponseInterface {
 
-    }
-    public function result(): ResponseInterface {
-
-    }
-    function aaaa() {
+    function gamelogic()
+    {
         $callable = unserialize($_SESSION["game"]);
         $psr17Factory = new Psr17Factory();
         if (isset($_POST["options"])) {
@@ -94,7 +92,6 @@ class Gamecontroller
                     $callable->computerRoll($computer, $_POST["computer"], $_POST["player"]);
                     break;
                 case "reset":
-                    
                     unset($_SESSION["computerDice"]);
                     if (!isset($_SESSION["game"])) {
                         $callable = new Game();
@@ -130,6 +127,3 @@ class Gamecontroller
         return;
     }
 }
-
-
-

@@ -66,7 +66,7 @@ class Router
                 $_SESSION["game"] = serialize($callable);
             }
             $callable = unserialize($_SESSION["game"]);
-            
+
 
             $callable->initGame();
             return;
@@ -121,7 +121,7 @@ class Router
                         if (!isset($_SESSION["game"])) {
                             $callable = new Game();
                             $_SESSION["game"] = serialize($callable);
-                        } 
+                        }
                         $callable = unserialize($_SESSION["game"]);
                         $callable->initGame();
                         break;
