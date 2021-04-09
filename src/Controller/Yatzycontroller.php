@@ -8,10 +8,9 @@ use LengthException;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use phpDocumentor\Reflection\Types\Null_;
 use Psr\Http\Message\ResponseInterface;
+use Rilr\Yatzy\Yatzy;
 
 use function Mos\Functions\renderView;
-
-use Rilr\Yatzy\Yatzy;
 
 /**
  * Controller for the index route.
@@ -23,7 +22,7 @@ class Yatzycontroller
         $psr17Factory = new Psr17Factory();
         $this->resetGame();
         $yatzy = new Yatzy();
-        $data = $yatzy->StartYatzy();
+        $data = $yatzy->startYatzy();
         $_SESSION["yatzy"] = serialize($yatzy);
         $body = renderView("layout/yatzy.php", $data);
         return $psr17Factory
@@ -35,14 +34,14 @@ class Yatzycontroller
         unset($_SESSION["throws"]);
         unset($_SESSION["playerScore"]);
     }
-    public function GameActions()
+    public function gameActions()
     {
         $psr17Factory = new Psr17Factory();
         $yatzy = unserialize($_SESSION["yatzy"]);
         $data = [];
         // var_dump($_POST);
         if ($_POST["gameaction"] == "roll" && $_SESSION["throws"] != 3) {
-            $data = $yatzy->DiceReturn();
+            $data = $yatzy->diceReturn();
             $_SESSION["throws"] = $_SESSION["throws"] + 1;
         } else if ($_POST["gameaction"] == "reroll" && $_SESSION["throws"] != 3) {
             if (isset($_POST["chosenDice"])) {

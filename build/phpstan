@@ -1,5 +1,26 @@
+ ------ ---------------------------------------- 
+ [32m Line [39m [32m config\router.php                      [39m 
+ ------ ---------------------------------------- 
+  13     Variable $router might not be defined.  
+  18     Variable $router might not be defined.  
+  19     Variable $router might not be defined.  
+  20     Variable $router might not be defined.  
+  22     Variable $router might not be defined.  
+  27     Variable $router might not be defined.  
+  30     Variable $router might not be defined.  
+  31     Variable $router might not be defined.  
+  33     Variable $router might not be defined.  
+  34     Variable $router might not be defined.  
+ ------ ---------------------------------------- 
 
-[30;42m                                                                                                                        [39;49m
-[30;42m [OK] No errors                                                                                                         [39;49m
-[30;42m                                                                                                                        [39;49m
+ ------ ------------------------------------------------------- 
+ [32m Line [39m [32m src\Controller\Gamecontroller.php                     [39m 
+ ------ ------------------------------------------------------- 
+  101    Unreachable statement - code above always terminates.  
+  116    Unreachable statement - code above always terminates.  
+ ------ ------------------------------------------------------- 
+
+[37;41m                                                                                                                        [39;49m
+[37;41m [ERROR] Found 12 errors                                                                                                [39;49m
+[37;41m                                                                                                                        [39;49m
 

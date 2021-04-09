@@ -1,30 +1,12 @@
 
-FILE: D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Router\Router.php
---------------------------------------------------------------------------------
-FOUND 14 ERRORS AFFECTING 9 LINES
---------------------------------------------------------------------------------
-  69 | ERROR | [x] Whitespace found at end of line
+FILE: D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Yatzy\Yatzy.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
  114 | ERROR | [x] Whitespace found at end of line
- 125 | ERROR | [x] Whitespace found at end of line
- 130 | ERROR | [x] Line indented incorrectly; expected 8 spaces, found 12
- 130 | ERROR | [x] Closing brace indented incorrectly; expected 8 spaces, found
-     |       |     12
- 132 | ERROR | [x] Line indented incorrectly; expected 4 spaces, found 8
- 132 | ERROR | [x] Closing brace indented incorrectly; expected 4 spaces, found
-     |       |     8
- 134 | ERROR | [ ] Visibility must be declared on property "$data"
- 138 | ERROR | [ ] There must not be more than one property declared per
-     |       |     statement
- 138 | ERROR | [ ] Visibility must be declared on property "$body"
- 139 | ERROR | [x] There must be 1 space after the property type declaration; 0
-     |       |     found
- 139 | ERROR | [ ] Visibility must be declared on property "$body"
- 140 | ERROR | [x] Line indented incorrectly; expected 0 spaces, found 4
- 140 | ERROR | [x] Closing brace indented incorrectly; expected 0 spaces, found
-     |       |     4
---------------------------------------------------------------------------------
-PHPCBF CAN FIX THE 10 MARKED SNIFF VIOLATIONS AUTOMATICALLY
---------------------------------------------------------------------------------
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
 
-Time: 476ms; Memory: 6MB
+Time: 661ms; Memory: 8MB
 

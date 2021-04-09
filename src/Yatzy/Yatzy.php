@@ -33,7 +33,7 @@ class Yatzy
     const DICESIDES = 6;
     const TABLEDATA = ["Ones", "Twos", "Threes", "Fours", "Fives", "Sixes", "Sum", "Bonus", "Three of a kind", "Four of a kind", "Full House", "Small Straight", "Large Straight", "Chance", "Yatzy", "Total Score"];
     const BORDER = ["Sum","Three of a kind", "Total Score"];
-    function render($playerScore, $computerScore): array
+    public function render($playerScore, $computerScore): array
     {
         $loopdata = "";
         $data = [
@@ -57,7 +57,7 @@ class Yatzy
         return $data;
     }
 
-    function StartYatzy(): array
+    public function startYatzy(): array
     {
         $this->player = new DiceHand(self::DICEAMOUNT, self::DICESIDES);
         $this->computer = new DiceHand(self::DICEAMOUNT, self::DICESIDES);
@@ -65,13 +65,13 @@ class Yatzy
         // $_SESSION["player"] = serialize($this->player);
         // $_SESSION["computer"] = serialize($this->computer);
         $this->computerScore = array_fill(0, 16, 0);
-        $this->playerScore = $this->PlayerArray();
+        $this->playerScore = $this->playerArray();
         $data = self::render($this->playerScore, $this->computerScore);
         $_SESSION["throws"] = 0;
         return $data;
     }
 
-    function PlayerArray(): array
+    private function playerArray(): array
     {
         $playerScore = [];
         $nobox = [6,7];
@@ -87,20 +87,20 @@ class Yatzy
         return $playerScore;
     }
 
-    function DiceReturn()
+    public function diceReturn()
     {
         $this->player->throw();
         $this->recentDice = $this->player->getLastRoll();
         $_SESSION["recentDice"] = $this->recentDice;
         if (!isset($_SESSION["playerScore"])) {
             $_SESSION["playerScore"] = $this->playerScore;
-        } else {
-            $this->playerScore = $_SESSION["playerScore"];
         }
-        $GraphicalDice = new GraphicalDice(self::DICESIDES);
+
+        $this->playerScore = $_SESSION["playerScore"];
+        $graphicalDice = new GraphicalDice(self::DICESIDES);
         $diceArray = [];
         foreach ($this->recentDice as $die) {
-            array_push($diceArray, $GraphicalDice->renderDice($die));
+            array_push($diceArray, $graphicalDice->renderDice($die));
         }
         $data = $this->render($this->playerScore, $this->computerScore);
         $data["playerDice"] = $diceArray;
@@ -111,19 +111,18 @@ class Yatzy
     {
         if (!isset($_SESSION["playerScore"])) {
             $_SESSION["playerScore"] = $this->playerScore;
-        } else {
-            $this->playerScore = $_SESSION["playerScore"];
         }
+        $this->playerScore = $_SESSION["playerScore"];
 
         $difference = self::DICEAMOUNT - count($chosendie);
         $this->player->throw();
         $darray = $this->player->getLastRoll();
         $newArray = array_slice($darray, 0, $difference);
         $dicearray = array_merge($chosendie, $newArray);
-        $GraphicalDice = new GraphicalDice(self::DICESIDES);
+        $graphicalDice = new GraphicalDice(self::DICESIDES);
         $dices = [];
         foreach ($dicearray as $die) {
-            array_push($dices, $GraphicalDice->renderDice($die));
+            array_push($dices, $graphicalDice->renderDice($die));
         }
         $data = $this->render($this->playerScore, $this->computerScore);
         $data["playerDice"] = $dices;
@@ -137,7 +136,6 @@ class Yatzy
         // var_dump($this->playerScore);
         $this->playerScore = $_SESSION["playerScore"];
         $next = $this->getNextScore();
-        $returnValue = "";
         // var_dump($this->playerScore);
         // var_dump($diceScore);
         switch ($next) {
@@ -206,97 +204,14 @@ class Yatzy
     }
     private function calculateSum()
     {
-        $Scoretable = $this->playerScore;
+        $scoreTable = $this->playerScore;
         $totalSum = 0;
         for ($i = 0; $i < 6; $i++) {
-            if ($Scoretable[$i] != "X") {
-                $totalSum = $totalSum + $Scoretable[$i];
+            if ($scoreTable[$i] != "X") {
+                $totalSum = $totalSum + $scoreTable[$i];
             }
         }
         $this->bonusScore($totalSum);
         $this->playerScore[6] = $totalSum;
     }
 }
-
-
-
-// <tr>
-//     <td>Ones</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Twos</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Threes</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Fours</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Fives</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Sixes</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr class="border">
-//     <td>Sum</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Bonus</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr class="border">
-//     <td>Three of a kind</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Four of a kind</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Full house</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Small Straight</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Large Straight</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Chance</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr>
-//     <td>Yatzy</td>
-//     <td></td>
-//     <td></td>
-// </tr>
-// <tr class="border">
-//     <td>Total Score</td>
-//     <td></td>
-//     <td></td>
-// </tr>

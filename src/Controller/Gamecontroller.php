@@ -55,7 +55,7 @@ class Gamecontroller
             ->withBody($psr17Factory->createStream($body));
     }
 
-    function gamelogic()
+    public function gamelogic()
     {
         $callable = unserialize($_SESSION["game"]);
         $psr17Factory = new Psr17Factory();
@@ -74,21 +74,13 @@ class Gamecontroller
         } else if (isset($_POST["gameAction"])) {
             switch ($_POST["gameAction"]) {
                 case "roll":
-                    // player $_POST["player"];
                     $player = unserialize($_SESSION["player"]);
-                    // var_dump($_SESSION);
-                    // throws die or dice again
-                    // $callable->playGame(1);
-                    // var_dump($_POST["diceArray"]);
                     $callable->playerRoll($player, $_POST["player"], $_POST["computer"], $_SESSION["computerDice"]);
                     break;
 
                 case "stay":
-                    // echo "stay";
-                    // echo $_POST["computer"];
                     $computer = unserialize($_SESSION["computer"]);
-                    // var_dump($_SESSION);
-                    // computer does it thing :D
+                    // computer does its thing :D
                     $callable->computerRoll($computer, $_POST["computer"], $_POST["player"]);
                     break;
                 case "reset":
