@@ -40,22 +40,13 @@ class Yatzycontroller
         $yatzy = unserialize($_SESSION["yatzy"]);
         $data = [];
         // var_dump($_POST);
-        if ($_POST["gameaction"] == "roll" && $_SESSION["throws"] != 3) {
+        if ($_POST["gameaction"] == "roll"  && $_SESSION["throws"] != 3) {
             $data = $yatzy->diceReturn();
             $_SESSION["throws"] = $_SESSION["throws"] + 1;
-        } else if ($_POST["gameaction"] == "reroll" && $_SESSION["throws"] != 3) {
-            if (isset($_POST["chosenDice"])) {
-                // echo "tjenixe";
-                // var_dump($_POST["chosenDice"]);
-                $data = $yatzy->reroll($_POST["chosenDice"]);
-                $_SESSION["throws"] = $_SESSION["throws"] + 1;
-            } else {
-                $data = $yatzy->addScore($_POST["Dice"]);
-                $_SESSION["throws"] = 1;
-            }
-        } else if ($_POST["gameaction"] == "confirm" || $_SESSION["throws"] == 3) {
-            //add to score
-            // var_dump($_POST["Dice"]);
+        } else if ($_POST["gameaction"] == "reroll" && $_SESSION["throws"] != 3 && isset($_POST["chosenDice"])) {
+            $data = $yatzy->reroll($_POST["chosenDice"]);
+            $_SESSION["throws"] = $_SESSION["throws"] + 1;
+        } else if (isset($_POST["gameaction"])) {
             $data = $yatzy->addScore($_POST["Dice"]);
             $_SESSION["throws"] = 0;
         }

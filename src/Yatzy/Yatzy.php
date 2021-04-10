@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Rilr\Yatzy;
 
+use phpDocumentor\Reflection\PseudoTypes\True_;
 use Rilr\Dice\{
     DiceHand,
     GraphicalDice
@@ -41,12 +42,15 @@ class Yatzy
             "message" => "Hello, this is the Yatzy page, rendered as a layout."
         ];
         $i = 0;
+        $htmlClass =  "<tr class='border'>";
         foreach (self::TABLEDATA as $row) {
-            if (in_array($row, self::BORDER)) {
-                $loopdata = $loopdata . "<tr class='border'>";
-            } else {
-                $loopdata = $loopdata . "<tr>";
-            }
+            // if (in_array($row, self::BORDER)) {
+            //     $loopdata = $loopdata . "<tr class='border'>";
+            // } else {
+            // }
+            // $loopdata = $loopdata . "<tr>";
+            in_array($row, self::BORDER) == true ? $loopdata .= $htmlClass : $loopdata .= "<tr>";
+            // in_array($row, self::BORDER) == false ? 'true' : $loopdata = $loopdata . "<tr>";
             $loopdata = $loopdata . "<td>" . $row . "</td>";
             $loopdata = $loopdata . "<td>" . $playerScore[$i] . "</td>";
             $loopdata = $loopdata . "<td>" . $computerScore[$i] . "</td>";
@@ -74,16 +78,16 @@ class Yatzy
     private function playerArray(): array
     {
         $playerScore = [];
-        $nobox = [6,7];
-        for ($i = 0; $i < 15; $i++) {
-            if (!in_array($i, $nobox)) {
+        $nobox = [6, 7, 15];
+        for ($i = 0; $i < 16; $i++) {
+            $playerScore[$i] = "X";
+            if (in_array($i, $nobox)) {
                 // $playerScore[$i] = "<input type='radio' name='choice' value='" . $i ."'>";
-                $playerScore[$i] = "X";
-            } else {
-                array_push($playerScore, 0);
+                // array_push($playerScore, 0);
+                $playerScore[$i] = 0;
             }
         }
-        array_push($playerScore, 0);
+        // array_push($playerScore, 0);
         return $playerScore;
     }
 
