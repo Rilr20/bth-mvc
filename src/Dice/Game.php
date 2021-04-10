@@ -58,8 +58,8 @@ class Game
         // var_dump($data);
         $_SESSION["player"] = serialize($this->player);
         $_SESSION["computer"] = serialize($this->computer);
-        $body = renderView("layout/dice.php", $data);
-        sendResponse($body);
+        // $body = renderView("layout/dice.php", $data);
+        // sendResponse($body);
     }
 
     private function dieSum($diceArray): int
@@ -152,9 +152,10 @@ class Game
         $string = "";
         $pWin = "Player Wins!";
         $pLoss = "Player Loses!";
-        if (!isset($_SESSION["resultArray"])) {
-            $_SESSION["resultArray"] = [];
-        }
+        $_SESSION["resultArray"] = $_SESSION["resultArray"] ?? [];
+        // if (!isset($_SESSION["resultArray"])) {
+        //     $_SESSION["resultArray"] = [];
+        // }
         $newResult = [];
         if ($computerSum == 21) {
             $string = $pLoss;//"datorn har 21 förlust"; // funkar $pLoss

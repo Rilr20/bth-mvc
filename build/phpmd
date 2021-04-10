@@ -1,5 +1,5 @@
 D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Controller\Debug.php:24	Avoid using static access to class '\Nyholm\Psr7\Stream' in method '__invoke'.
 D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Controller\Gamecontroller.php:58	The method gamelogic() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
-D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Dice\Game.php:150	The method checkWinCondition() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Dice\Game.php:150	The method checkWinCondition() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
 D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Yatzy\Yatzy.php:44	Avoid variables with short names like $i. Configured minimum length is 3.
 D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Yatzy\Yatzy.php:181	Avoid variables with short names like $i. Configured minimum length is 3.
