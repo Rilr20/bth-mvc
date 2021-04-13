@@ -59,6 +59,7 @@ class Gamecontroller
     {
         $callable = unserialize($_SESSION["game"]);
         $psr17Factory = new Psr17Factory();
+        $data = [];
         if (isset($_POST["options"])) {
             switch ($_POST["options"]) {
                 case 1:
@@ -71,11 +72,11 @@ class Gamecontroller
                     $data = $callable->playGame(2);
                     break;
             }
-            $body = renderView("layout/dice.php", $data);
+            // $body = renderView("layout/dice.php", $data);
 
-            return $psr17Factory
-            ->createResponse(200)
-            ->withBody($psr17Factory->createStream($body));
+            // return $psr17Factory
+            // ->createResponse(200)
+            // ->withBody($psr17Factory->createStream($body));
         } else if (isset($_POST["gameAction"])) {
             switch ($_POST["gameAction"]) {
                 case "roll":
@@ -97,12 +98,6 @@ class Gamecontroller
                     $callable = unserialize($_SESSION["game"]);
 
                     $data = $callable->initGame();
-                    $body = renderView("layout/dice.php", $data);
-
-                    return $psr17Factory
-                    ->createResponse(200)
-                    ->withBody($psr17Factory->createStream($body));
-                    // echo "reset game";
                     break;
                 case "resetscore":
                     // echo "reset score     ";
@@ -113,14 +108,12 @@ class Gamecontroller
                     }
                     $callable = unserialize($_SESSION["game"]);
                     $data = $callable->initGame();
-                    
                     break;
             }
-            $body = renderView("layout/dice.php", $data);
-            return $psr17Factory
-                ->createResponse(200)
-                ->withBody($psr17Factory->createStream($body));
         }
-        return;
+        $body = renderView("layout/dice.php", $data);
+        return $psr17Factory
+            ->createResponse(200)
+            ->withBody($psr17Factory->createStream($body));
     }
 }

@@ -12,7 +12,6 @@ use Rilr\Dice\Dice;
 class DiceHand
 {
     private $dices = [];
-    
     public function __construct($numOfDice, $sides)
     {
         for ($i = 0; $i < $numOfDice; $i++) {

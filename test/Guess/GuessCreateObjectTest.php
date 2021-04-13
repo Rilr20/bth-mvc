@@ -43,8 +43,6 @@ class GuessCreateObjectTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-
-
     /**
      * Construct object and verify that the object has the expected
      * properties, use both arguments.

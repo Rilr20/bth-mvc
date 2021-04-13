@@ -9,11 +9,11 @@ use PHPUnit\Framework\TestCase;
  */
 class DiceCraeteObjectTest extends TestCase
 {
-    public function testCreateDice() 
+    public function testCreateDice()
     {
         $sides = 6;
         $dice = new dice($sides);
-        
+
         $res = $dice->sides;
         $exp = $sides;
         $this->assertEquals($exp, $res);
@@ -27,7 +27,8 @@ class DiceCraeteObjectTest extends TestCase
         $exp = 0;
         $this->assertEquals($exp, $res);
     }
-    public function testThrowDice() {
+    public function testThrowDice()
+    {
         $sides = 6;
         $dice = new dice($sides);
 

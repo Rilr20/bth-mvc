@@ -18,10 +18,9 @@ class DiceHandCraeteObjectTest extends TestCase
         $dicehand = new DiceHand($exp, $sides);
         $res = $dicehand->getDiceHandLenght();
         $this->assertEquals($exp, $res);
-        
     }
 
-    public function testThrowDice() 
+    public function testThrowDice()
     {
         $sides = 6;
         $exp = 2;
@@ -30,13 +29,4 @@ class DiceHandCraeteObjectTest extends TestCase
         $res = $dicehand->getLastRoll();
         $this->assertEquals($exp, count($res));
     }
-    // public function testThrowDice()
-    // {
-    //     $sides = 6;
-    //     $dice = new dice($sides);
-
-    //     $exp = $dice->getLastRoll();
-    //     $res = $dice->throw();
-    //     $this->assertNotEquals($exp, $res);
-    // }
 }
