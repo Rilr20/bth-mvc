@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="_css/style.css" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Debug.php.html#16">Mos\Controller\Debug</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Error.php.html#15">Mos\Controller\Error</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Gamecontroller.php.html#16">Rilr\Controller\Gamecontroller</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Index.php.html#15">Mos\Controller\Index</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Sample.php.html#15">Mos\Controller\Sample</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Session.php.html#20">Mos\Controller\Session</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TwigView.php.html#15">Mos\Controller\TwigView</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Yatzycontroller.php.html#18">Rilr\Controller\Yatzycontroller</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#26">Rilr\Dice\Game</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/GraphicalDice.php.html#9">Rilr\Dice\GraphicalDice</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#25">Rilr\Yatzy\Yatzy</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/DiceHand.php.html#12">Rilr\Dice\DiceHand</a></td><td class="text-right">28%</td></tr>
+       <tr><td><a href="Guess/Guess.php.html#8">Mos\Guess\Guess</a></td><td class="text-right">50%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Yatzy/Yatzy.php.html#25">Rilr\Yatzy\Yatzy</a></td><td class="text-right">992</td></tr>
+       <tr><td><a href="Dice/Game.php.html#26">Rilr\Dice\Game</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="Controller/Gamecontroller.php.html#16">Rilr\Controller\Gamecontroller</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Controller/Yatzycontroller.php.html#18">Rilr\Controller\Yatzycontroller</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Guess/Guess.php.html#8">Mos\Guess\Guess</a></td><td class="text-right">26</td></tr>
+       <tr><td><a href="Dice/DiceHand.php.html#12">Rilr\Dice\DiceHand</a></td><td class="text-right">24</td></tr>
+       <tr><td><a href="Dice/GraphicalDice.php.html#9">Rilr\Dice\GraphicalDice</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Debug.php.html#18"><abbr title="Mos\Controller\Debug::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#64"><abbr title="Rilr\Yatzy\Yatzy::startYatzy">startYatzy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#124"><abbr title="Rilr\Dice\Game::playerRoll">playerRoll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#150"><abbr title="Rilr\Dice\Game::checkWinCondition">checkWinCondition</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#196"><abbr title="Rilr\Dice\Game::computerRoll">computerRoll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/GraphicalDice.php.html#11"><abbr title="Rilr\Dice\GraphicalDice::renderDice">renderDice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Guess/Guess.php.html#85"><abbr title="Mos\Guess\Guess::makeGuess">makeGuess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#37"><abbr title="Rilr\Yatzy\Yatzy::render">render</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#78"><abbr title="Rilr\Yatzy\Yatzy::playerArray">playerArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#84"><abbr title="Rilr\Dice\Game::firstRound">firstRound</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#94"><abbr title="Rilr\Yatzy\Yatzy::diceReturn">diceReturn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#114"><abbr title="Rilr\Yatzy\Yatzy::reroll">reroll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#136"><abbr title="Rilr\Yatzy\Yatzy::addScore">addScore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#179"><abbr title="Rilr\Yatzy\Yatzy::getNextScore">getNextScore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#191"><abbr title="Rilr\Yatzy\Yatzy::simpleAdds">simpleAdds</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#203"><abbr title="Rilr\Yatzy\Yatzy::bonusScore">bonusScore</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#109"><abbr title="Rilr\Dice\Game::initGame">initGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#74"><abbr title="Rilr\Dice\Game::renderDice">renderDice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Error.php.html#17"><abbr title="Mos\Controller\Error::do404">do404</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Session.php.html#35"><abbr title="Mos\Controller\Session::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Error.php.html#35"><abbr title="Mos\Controller\Error::do405">do405</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Gamecontroller.php.html#33"><abbr title="Rilr\Controller\Gamecontroller::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Gamecontroller.php.html#58"><abbr title="Rilr\Controller\Gamecontroller::gamelogic">gamelogic</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Index.php.html#17"><abbr title="Mos\Controller\Index::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Sample.php.html#17"><abbr title="Mos\Controller\Sample::where">where</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Session.php.html#22"><abbr title="Mos\Controller\Session::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TwigView.php.html#17"><abbr title="Mos\Controller\TwigView::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#65"><abbr title="Rilr\Dice\Game::dieSum">dieSum</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Yatzycontroller.php.html#20"><abbr title="Rilr\Controller\Yatzycontroller::__invoke">__invoke</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Yatzycontroller.php.html#32"><abbr title="Rilr\Controller\Yatzycontroller::resetGame">resetGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Yatzycontroller.php.html#37"><abbr title="Rilr\Controller\Yatzycontroller::gameActions">gameActions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/DiceHand.php.html#23"><abbr title="Rilr\Dice\DiceHand::throw">throw</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/DiceHand.php.html#31"><abbr title="Rilr\Dice\DiceHand::getLastRoll">getLastRoll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Dice/Game.php.html#31"><abbr title="Rilr\Dice\Game::playGame">playGame</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#209"><abbr title="Rilr\Yatzy\Yatzy::calculateSum">calculateSum</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Gamecontroller.php.html#58"><abbr title="Rilr\Controller\Gamecontroller::gamelogic">gamelogic</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Dice/Game.php.html#150"><abbr title="Rilr\Dice\Game::checkWinCondition">checkWinCondition</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#136"><abbr title="Rilr\Yatzy\Yatzy::addScore">addScore</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Controller/Yatzycontroller.php.html#37"><abbr title="Rilr\Controller\Yatzycontroller::gameActions">gameActions</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Guess/Guess.php.html#85"><abbr title="Mos\Guess\Guess::makeGuess">makeGuess</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Dice/Game.php.html#196"><abbr title="Rilr\Dice\Game::computerRoll">computerRoll</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#209"><abbr title="Rilr\Yatzy\Yatzy::calculateSum">calculateSum</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#94"><abbr title="Rilr\Yatzy\Yatzy::diceReturn">diceReturn</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#191"><abbr title="Rilr\Yatzy\Yatzy::simpleAdds">simpleAdds</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#179"><abbr title="Rilr\Yatzy\Yatzy::getNextScore">getNextScore</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#114"><abbr title="Rilr\Yatzy\Yatzy::reroll">reroll</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#37"><abbr title="Rilr\Yatzy\Yatzy::render">render</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#78"><abbr title="Rilr\Yatzy\Yatzy::playerArray">playerArray</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Yatzy/Yatzy.php.html#203"><abbr title="Rilr\Yatzy\Yatzy::bonusScore">bonusScore</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/Gamecontroller.php.html#33"><abbr title="Rilr\Controller\Gamecontroller::index">index</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Dice/Game.php.html#124"><abbr title="Rilr\Dice\Game::playerRoll">playerRoll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Dice/Game.php.html#74"><abbr title="Rilr\Dice\Game::renderDice">renderDice</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Dice/Game.php.html#65"><abbr title="Rilr\Dice\Game::dieSum">dieSum</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Dice/DiceHand.php.html#31"><abbr title="Rilr\Dice\DiceHand::getLastRoll">getLastRoll</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Dice/DiceHand.php.html#23"><abbr title="Rilr\Dice\DiceHand::throw">throw</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Dice/GraphicalDice.php.html#11"><abbr title="Rilr\Dice\GraphicalDice::renderDice">renderDice</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.6</a> using <a href="https://secure.php.net/" target="_top">PHP 7.4.8</a> with <a href="https://xdebug.org/">Xdebug 2.8.1</a> and <a href="https://phpunit.de/">PHPUnit 9.5.4</a> at Tue Apr 13 13:30:43 CEST 2021.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js" type="text/javascript"></script>
+  <script src="_js/d3.min.js" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([11,0,0,1,0,0,1,0,0,0,0,2], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([35,0,0,0,0,0,0,0,0,0,0,9], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/Debug.php.html#16\">Mos\\Controller\\Debug<\/a>"],[0,2,"<a href=\"Controller\/Error.php.html#15\">Mos\\Controller\\Error<\/a>"],[0,13,"<a href=\"Controller\/Gamecontroller.php.html#16\">Rilr\\Controller\\Gamecontroller<\/a>"],[0,1,"<a href=\"Controller\/Index.php.html#15\">Mos\\Controller\\Index<\/a>"],[0,1,"<a href=\"Controller\/Sample.php.html#15\">Mos\\Controller\\Sample<\/a>"],[0,2,"<a href=\"Controller\/Session.php.html#20\">Mos\\Controller\\Session<\/a>"],[0,1,"<a href=\"Controller\/TwigView.php.html#15\">Mos\\Controller\\TwigView<\/a>"],[0,9,"<a href=\"Controller\/Yatzycontroller.php.html#18\">Rilr\\Controller\\Yatzycontroller<\/a>"],[100,3,"<a href=\"Dice\/Dice.php.html#10\">Rilr\\Dice\\Dice<\/a>"],[28.57142857142857,7,"<a href=\"Dice\/DiceHand.php.html#12\">Rilr\\Dice\\DiceHand<\/a>"],[0,23,"<a href=\"Dice\/Game.php.html#26\">Rilr\\Dice\\Game<\/a>"],[0,2,"<a href=\"Dice\/GraphicalDice.php.html#9\">Rilr\\Dice\\GraphicalDice<\/a>"],[50,11,"<a href=\"Guess\/Guess.php.html#8\">Mos\\Guess\\Guess<\/a>"],[100,0,"<a href=\"Guess\/GuessException.php.html#8\">Mos\\Guess\\GuessException<\/a>"],[0,31,"<a href=\"Yatzy\/Yatzy.php.html#25\">Rilr\\Yatzy\\Yatzy<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/Debug.php.html#18\">Mos\\Controller\\Debug::__invoke<\/a>"],[0,1,"<a href=\"Controller\/Error.php.html#17\">Mos\\Controller\\Error::do404<\/a>"],[0,1,"<a href=\"Controller\/Error.php.html#35\">Mos\\Controller\\Error::do405<\/a>"],[0,2,"<a href=\"Controller\/Gamecontroller.php.html#33\">Rilr\\Controller\\Gamecontroller::index<\/a>"],[0,11,"<a href=\"Controller\/Gamecontroller.php.html#58\">Rilr\\Controller\\Gamecontroller::gamelogic<\/a>"],[0,1,"<a href=\"Controller\/Index.php.html#17\">Mos\\Controller\\Index::__invoke<\/a>"],[0,1,"<a href=\"Controller\/Sample.php.html#17\">Mos\\Controller\\Sample::where<\/a>"],[0,1,"<a href=\"Controller\/Session.php.html#22\">Mos\\Controller\\Session::index<\/a>"],[0,1,"<a href=\"Controller\/Session.php.html#35\">Mos\\Controller\\Session::destroy<\/a>"],[0,1,"<a href=\"Controller\/TwigView.php.html#17\">Mos\\Controller\\TwigView::__invoke<\/a>"],[0,1,"<a href=\"Controller\/Yatzycontroller.php.html#20\">Rilr\\Controller\\Yatzycontroller::__invoke<\/a>"],[0,1,"<a href=\"Controller\/Yatzycontroller.php.html#32\">Rilr\\Controller\\Yatzycontroller::resetGame<\/a>"],[0,7,"<a href=\"Controller\/Yatzycontroller.php.html#37\">Rilr\\Controller\\Yatzycontroller::gameActions<\/a>"],[100,1,"<a href=\"Dice\/Dice.php.html#21\">Rilr\\Dice\\Dice::__construct<\/a>"],[100,1,"<a href=\"Dice\/Dice.php.html#29\">Rilr\\Dice\\Dice::throw<\/a>"],[100,1,"<a href=\"Dice\/Dice.php.html#37\">Rilr\\Dice\\Dice::getLastRoll<\/a>"],[100,2,"<a href=\"Dice\/DiceHand.php.html#16\">Rilr\\Dice\\DiceHand::__construct<\/a>"],[0,2,"<a href=\"Dice\/DiceHand.php.html#23\">Rilr\\Dice\\DiceHand::throw<\/a>"],[0,2,"<a href=\"Dice\/DiceHand.php.html#31\">Rilr\\Dice\\DiceHand::getLastRoll<\/a>"],[100,1,"<a href=\"Dice\/DiceHand.php.html#44\">Rilr\\Dice\\DiceHand::getDiceHandLenght<\/a>"],[0,1,"<a href=\"Dice\/Game.php.html#31\">Rilr\\Dice\\Game::playGame<\/a>"],[0,2,"<a href=\"Dice\/Game.php.html#65\">Rilr\\Dice\\Game::dieSum<\/a>"],[0,2,"<a href=\"Dice\/Game.php.html#74\">Rilr\\Dice\\Game::renderDice<\/a>"],[0,1,"<a href=\"Dice\/Game.php.html#84\">Rilr\\Dice\\Game::firstRound<\/a>"],[0,1,"<a href=\"Dice\/Game.php.html#109\">Rilr\\Dice\\Game::initGame<\/a>"],[0,2,"<a href=\"Dice\/Game.php.html#124\">Rilr\\Dice\\Game::playerRoll<\/a>"],[0,10,"<a href=\"Dice\/Game.php.html#150\">Rilr\\Dice\\Game::checkWinCondition<\/a>"],[0,4,"<a href=\"Dice\/Game.php.html#196\">Rilr\\Dice\\Game::computerRoll<\/a>"],[0,2,"<a href=\"Dice\/GraphicalDice.php.html#11\">Rilr\\Dice\\GraphicalDice::renderDice<\/a>"],[100,2,"<a href=\"Guess\/Guess.php.html#28\">Mos\\Guess\\Guess::__construct<\/a>"],[100,1,"<a href=\"Guess\/Guess.php.html#45\">Mos\\Guess\\Guess::random<\/a>"],[100,1,"<a href=\"Guess\/Guess.php.html#58\">Mos\\Guess\\Guess::tries<\/a>"],[100,1,"<a href=\"Guess\/Guess.php.html#70\">Mos\\Guess\\Guess::number<\/a>"],[0,6,"<a href=\"Guess\/Guess.php.html#85\">Mos\\Guess\\Guess::makeGuess<\/a>"],[0,3,"<a href=\"Yatzy\/Yatzy.php.html#37\">Rilr\\Yatzy\\Yatzy::render<\/a>"],[0,1,"<a href=\"Yatzy\/Yatzy.php.html#64\">Rilr\\Yatzy\\Yatzy::startYatzy<\/a>"],[0,3,"<a href=\"Yatzy\/Yatzy.php.html#78\">Rilr\\Yatzy\\Yatzy::playerArray<\/a>"],[0,3,"<a href=\"Yatzy\/Yatzy.php.html#94\">Rilr\\Yatzy\\Yatzy::diceReturn<\/a>"],[0,3,"<a href=\"Yatzy\/Yatzy.php.html#114\">Rilr\\Yatzy\\Yatzy::reroll<\/a>"],[0,7,"<a href=\"Yatzy\/Yatzy.php.html#136\">Rilr\\Yatzy\\Yatzy::addScore<\/a>"],[0,3,"<a href=\"Yatzy\/Yatzy.php.html#179\">Rilr\\Yatzy\\Yatzy::getNextScore<\/a>"],[0,3,"<a href=\"Yatzy\/Yatzy.php.html#191\">Rilr\\Yatzy\\Yatzy::simpleAdds<\/a>"],[0,2,"<a href=\"Yatzy\/Yatzy.php.html#203\">Rilr\\Yatzy\\Yatzy::bonusScore<\/a>"],[0,3,"<a href=\"Yatzy\/Yatzy.php.html#209\">Rilr\\Yatzy\\Yatzy::calculateSum<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
