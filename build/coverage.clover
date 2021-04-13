@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1618313442">
-  <project timestamp="1618313442">
+<coverage generated="1618313860">
+  <project timestamp="1618313860">
     <file name="D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Controller\Debug.php">
       <class name="Mos\Controller\Debug" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
@@ -181,39 +181,39 @@
       <class name="Rilr\Dice\Dice" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
       </class>
-      <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="23" type="stmt" count="4"/>
-      <line num="24" type="stmt" count="4"/>
-      <line num="29" type="method" name="throw" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="31" type="stmt" count="1"/>
-      <line num="32" type="stmt" count="1"/>
-      <line num="37" type="method" name="getLastRoll" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="39" type="stmt" count="2"/>
+      <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="23" type="stmt" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="29" type="method" name="throw" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="2"/>
+      <line num="37" type="method" name="getLastRoll" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="39" type="stmt" count="3"/>
       <metrics loc="41" ncloc="24" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
     </file>
     <file name="D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Dice\DiceHand.php">
       <class name="Rilr\Dice\DiceHand" namespace="global">
-        <metrics complexity="7" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="4" elements="18" coveredelements="6"/>
+        <metrics complexity="7" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
       </class>
-      <line num="16" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="1"/>
-      <line num="18" type="stmt" count="1"/>
-      <line num="19" type="stmt" count="1"/>
-      <line num="21" type="stmt" count="1"/>
-      <line num="23" type="method" name="throw" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="31" type="method" name="getLastRoll" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="19" type="stmt" count="2"/>
+      <line num="21" type="stmt" count="2"/>
+      <line num="23" type="method" name="throw" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="31" type="method" name="getLastRoll" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
       <line num="44" type="method" name="getDiceHandLenght" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="46" type="stmt" count="1"/>
-      <metrics loc="48" ncloc="42" classes="1" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="4" elements="18" coveredelements="6"/>
+      <metrics loc="48" ncloc="42" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="18" coveredelements="18"/>
     </file>
     <file name="D:\Users\BrödKatt\dbwebb-Kurser\mvc\me\game\src\Dice\Game.php">
       <class name="Rilr\Dice\Game" namespace="global">
@@ -565,6 +565,6 @@
       <line num="211" type="stmt" count="0"/>
       <metrics loc="211" ncloc="150" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="61" coveredstatements="0" elements="61" coveredelements="0"/>
     </file>
-    <metrics files="17" loc="1408" ncloc="1039" classes="14" methods="44" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="424" coveredstatements="19" elements="468" coveredelements="28"/>
+    <metrics files="17" loc="1408" ncloc="1039" classes="14" methods="44" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="424" coveredstatements="29" elements="468" coveredelements="40"/>
   </project>
 </coverage>
