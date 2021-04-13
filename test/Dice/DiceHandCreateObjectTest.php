@@ -9,7 +9,7 @@ use function PHPUnit\Framework\assertEquals;
 /**
  * test cases for class Dice
  */
-class DiceHandCraeteObjectTest extends TestCase
+class DiceHandCreateObjectTest extends TestCase
 {
     public function testCreateDiceHand()
     {

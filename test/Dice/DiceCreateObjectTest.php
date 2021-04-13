@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * test cases for class Dice
  */
-class DiceCraeteObjectTest extends TestCase
+class DiceCreateObjectTest extends TestCase
 {
     public function testCreateDice()
     {
