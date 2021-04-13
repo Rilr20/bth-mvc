@@ -28,7 +28,7 @@ class Game
     public $player;
     public $computer;
     public $sides = 6;
-    public function playGame($numOfDie = 1): void
+    public function playGame($numOfDie = 1)
     {
         $_SESSION["running"] = "true";
         $data = [
@@ -58,6 +58,7 @@ class Game
         // var_dump($data);
         $_SESSION["player"] = serialize($this->player);
         $_SESSION["computer"] = serialize($this->computer);
+        return $data;
         // $body = renderView("layout/dice.php", $data);
         // sendResponse($body);
     }
@@ -121,7 +122,7 @@ class Game
         // sendResponse($body);
     }
 
-    public function playerRoll($playerHand, $currentSum, $opponentSum, $computerDice): void
+    public function playerRoll($playerHand, $currentSum, $opponentSum, $computerDice)
     {
         //rendera tärningar
         // var_dump($computerDice);
@@ -143,11 +144,12 @@ class Game
             "computerDice" => $computerDice,
             "playerDice" => $playerDice
         ];
-        $body = renderView("layout/dice.php", $data);
-        sendResponse($body);
+        // $body = renderView("layout/dice.php", $data);
+        // sendResponse($body);
+        return $data;
     }
 
-    public function checkWinCondition($playerSum, $computerSum, $htmlArray): void
+    public function checkWinCondition($playerSum, $computerSum, $htmlArray)
     {
         $string = "";
         $pWin = "Player Wins!";
@@ -189,8 +191,9 @@ class Game
         $newResult[0] = $string;
         $_SESSION["resultArray"] = array_merge($_SESSION["resultArray"], $newResult);
         $_SESSION["running"] = "intermission";
-        $body = renderView("layout/dice.php", $data);
-        sendResponse($body);
+        // $body = renderView("layout/dice.php", $data);
+        // sendResponse($body);
+        return $data;
     }
 
     public function computerRoll($computerHand, $computerSum, $playerSum)
@@ -210,6 +213,6 @@ class Game
                 $htmlArray = array_merge($htmlArray, $renderDice);
             }
         }
-        $this->checkWinCondition($playerSum, $newSum, $htmlArray);
+        return $this->checkWinCondition($playerSum, $newSum, $htmlArray);
     }
 }

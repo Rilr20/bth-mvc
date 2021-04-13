@@ -63,25 +63,30 @@ class Gamecontroller
             switch ($_POST["options"]) {
                 case 1:
                     // echo "en tärning";
-                    $callable->playGame(1);
+                    $data = $callable->playGame(1);
                     break;
 
                 case 2:
                     // echo "två tärningar";
-                    $callable->playGame(2);
+                    $data = $callable->playGame(2);
                     break;
             }
+            $body = renderView("layout/dice.php", $data);
+
+            return $psr17Factory
+            ->createResponse(200)
+            ->withBody($psr17Factory->createStream($body));
         } else if (isset($_POST["gameAction"])) {
             switch ($_POST["gameAction"]) {
                 case "roll":
                     $player = unserialize($_SESSION["player"]);
-                    $callable->playerRoll($player, $_POST["player"], $_POST["computer"], $_SESSION["computerDice"]);
+                    $data = $callable->playerRoll($player, $_POST["player"], $_POST["computer"], $_SESSION["computerDice"]);
                     break;
 
                 case "stay":
                     $computer = unserialize($_SESSION["computer"]);
                     // computer does its thing :D
-                    $callable->computerRoll($computer, $_POST["computer"], $_POST["player"]);
+                    $data = $callable->computerRoll($computer, $_POST["computer"], $_POST["player"]);
                     break;
                 case "reset":
                     unset($_SESSION["computerDice"]);
@@ -108,13 +113,13 @@ class Gamecontroller
                     }
                     $callable = unserialize($_SESSION["game"]);
                     $data = $callable->initGame();
-                    $body = renderView("layout/dice.php", $data);
-
-                    return $psr17Factory
-                    ->createResponse(200)
-                        ->withBody($psr17Factory->createStream($body));
+                    
                     break;
             }
+            $body = renderView("layout/dice.php", $data);
+            return $psr17Factory
+                ->createResponse(200)
+                ->withBody($psr17Factory->createStream($body));
         }
         return;
     }
