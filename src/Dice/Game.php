@@ -82,7 +82,7 @@ class Game
         }
         return $htmlArray;
     }
-    public function firstRound($playerHand, $computerHand): array
+    private function firstRound($playerHand, $computerHand): array
     {
         $playerDice = [];
         $computerDice = [];
