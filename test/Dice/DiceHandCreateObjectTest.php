@@ -4,8 +4,6 @@ namespace Rilr\Dice;
 
 use PHPUnit\Framework\TestCase;
 
-use function PHPUnit\Framework\assertEquals;
-
 /**
  * test cases for class Dice
  */

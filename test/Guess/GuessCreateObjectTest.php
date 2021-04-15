@@ -61,7 +61,7 @@ class GuessCreateObjectTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-    public function testMakeGuess() 
+    public function testMakeGuess()
     {
         $guess = new Guess(20, 4);
         $this->assertInstanceOf("\Mos\Guess\Guess", $guess);
@@ -77,7 +77,6 @@ class GuessCreateObjectTest extends TestCase
         $res = $guess->makeGuess(20);
         $exp = "correct!!!";
         $this->assertEquals($exp, $res);
-
     }
     public function testNoMoreGuesses()
     {
@@ -98,4 +97,4 @@ class GuessCreateObjectTest extends TestCase
         // $exp = "no guesses left.";
         // $this->assertEquals($exp, $res);
     }
-} 
+}

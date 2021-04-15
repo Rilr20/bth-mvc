@@ -9,9 +9,9 @@ use ReflectionClass;
 /**
  * test cases for class Dice
  */
-class GameCreateObjectTest extends TestCase 
+class GameCreateObjectTest extends TestCase
 {
-    public function testInitGame() 
+    public function testInitGame()
     {
         $game = new Game();
         $data = $game->initGame();
@@ -25,7 +25,7 @@ class GameCreateObjectTest extends TestCase
         $this->assertEquals($exp, $data);
     }
 
-    public function testPlayGame() 
+    public function testPlayGame()
     {
         // unset($_SESSION["player"]);
         // unset($_SESSION["computer"]);
@@ -38,20 +38,20 @@ class GameCreateObjectTest extends TestCase
         $computer = unserialize($_SESSION["computer"]);
         $playerRes = $player->getDiceHandLenght();
         $computerSes = $computer->getDiceHandLenght();
-        
+
         $this->assertEquals(true, isset($_SESSION["player"]));
         $this->assertEquals(true, isset($_SESSION["computer"]));
         $this->assertEquals(true, isset($_SESSION["running"]));
-        
+
         $this->assertEquals($numOfDie, $playerRes);
         $this->assertEquals($numOfDie, $computerSes);
     }
 
-    public function testDieSum() 
+    public function testDieSum()
     {
         $diceArray = [2, 4, 6, 7, 8, 2];
-       
-        
+
+
         $game = new Game();
         $reflector = new ReflectionClass('Rilr\Dice\Game');
         $method = $reflector->getMethod('dieSum');
@@ -64,7 +64,7 @@ class GameCreateObjectTest extends TestCase
         $this->assertEquals($exp, $res);
     }
 
-    public function testRenderDice() 
+    public function testRenderDice()
     {
         $diceArray = [2, 3];
         $game = new Game();
@@ -87,9 +87,9 @@ class GameCreateObjectTest extends TestCase
         $this->assertEquals(count($diceArray), count($res));
     }
 
-    public function testFirstRound() 
+    public function testFirstRound()
     {
-        $hand1 = new DiceHand(2,4);
+        $hand1 = new DiceHand(2, 4);
         $hand2 = new DiceHand(2, 4);
         $game = new Game();
         $reflector = new ReflectionClass('Rilr\Dice\Game');
@@ -108,7 +108,7 @@ class GameCreateObjectTest extends TestCase
         $this->assertEquals($dataLength, count($res));
     }
 
-    public function testCheckWinCondition() 
+    public function testCheckWinCondition()
     {
         $game = new Game();
         $pWin = "Player Wins!";
@@ -117,7 +117,7 @@ class GameCreateObjectTest extends TestCase
         $computerSum = [21, 20, 10, 22, 20, 18, 10];
         $exp = [$pLoss, $pWin, $pLoss, $pWin, $pLoss, $pWin, $pLoss];
         $htmlArray = [];
-        for($i = 0; $i < count($playerSum); $i++) {
+        for ($i = 0; $i < count($playerSum); $i++) {
             $res = $game->checkWinCondition($playerSum[$i], $computerSum[$i], $htmlArray);
             // $this->assertContains($exp[$i], $res["gameText"], "assert doesn't contain right game text");
             $this->assertEquals($exp[$i], $res["gameText"]);
@@ -125,7 +125,7 @@ class GameCreateObjectTest extends TestCase
         }
     }
 
-    public function testPlayerRoll() 
+    public function testPlayerRoll()
     {
         $game = new Game();
         $hand1 = new DiceHand(2, 4);
@@ -139,7 +139,7 @@ class GameCreateObjectTest extends TestCase
         $this->assertEquals($opponentSum, $res["computerSum"]);
         $this->assertEquals(null, $res["computerDice"]);
     }
-    public function testComputerRoll() 
+    public function testComputerRoll()
     {
         $game = new Game();
         $hand1 = new DiceHand(2, 4);

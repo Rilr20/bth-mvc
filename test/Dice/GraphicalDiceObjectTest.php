@@ -4,8 +4,6 @@ namespace Rilr\Dice;
 
 use PHPUnit\Framework\TestCase;
 
-use function PHPUnit\Framework\assertEquals;
-
 /**
  * test cases for class Dice
  */
@@ -26,6 +24,6 @@ class GraphicalDiceCreateObjectTest extends TestCase
             $exp = $exp . $span;
         }
         $exp = $exp . $end;
-        assertEquals($exp, $res);
+        $this->assertEquals($exp, $res);
     }
 }

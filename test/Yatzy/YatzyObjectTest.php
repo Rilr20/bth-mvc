@@ -3,8 +3,6 @@
 namespace Rilr\Yatzy;
 
 use PHPUnit\Framework\TestCase;
-
-use function PHPUnit\Framework\assertEquals;
 use ReflectionClass;
 
 /**
@@ -25,7 +23,7 @@ class YatzyCreateObjectTest extends TestCase
         $array = array_fill(0, 16, 0);
         $exp = 3;
         $res = $yatzy->render($array, $array);
-        
+
         $this->assertEquals($exp, count($res));
         $this->assertEquals(true, isset($res["header"]));
         $this->assertEquals(true, isset($res["message"]));
@@ -41,8 +39,8 @@ class YatzyCreateObjectTest extends TestCase
         $method->setAccessible(true);
 
         $res = $method->invokeArgs($yatzy, array());
-    
-        for ($i=0; $i < count($res); $i++) { 
+
+        for ($i = 0; $i < count($res); $i++) {
             $this->assertEquals($expArray[$i], $res[$i]);
         }
     }
@@ -72,7 +70,7 @@ class YatzyCreateObjectTest extends TestCase
         $method->invokeArgs($yatzy, array(63));
         $this->assertEquals($yatzy->playerScore[7], 50);
     }
-    public function testCalculateSum() 
+    public function testCalculateSum()
     {
         $expArray = ["2", "2", "2", "2", "2", "2", 0, 0, "X", "X", "X", "X", "X", "X", "X", 0];
         $yatzy = new Yatzy();
@@ -114,9 +112,9 @@ class YatzyCreateObjectTest extends TestCase
         $diceScore = [2,3,4,5,6];
         $exp = [0,2,3,4,5,6];
         $expTotalScore = [0,2,5,9,14,20];
-        
 
-        for ($i=0; $i < 6; $i++) { 
+
+        for ($i = 0; $i < 6; $i++) {
             $yatzy->addScore($diceScore);
             $this->assertEquals($exp[$i], $yatzy->playerScore[$i]);
             $this->assertEquals($expTotalScore[$i], $yatzy->playerScore[6]);
@@ -151,7 +149,7 @@ class YatzyCreateObjectTest extends TestCase
         $dices = ["1", "1", "2", "5", "3"];
         $number = [1, 2, 3, 4, 5];
         $exp = [2, 2, 3, 0, 5];
-        for($i = 0; $i < count($number); $i++){
+        for ($i = 0; $i < count($number); $i++) {
             $method->invokeArgs($yatzy, array($dices, $number[$i]));
             $this->assertEquals($exp[$i], $yatzy->playerScore[$i]);
         }
